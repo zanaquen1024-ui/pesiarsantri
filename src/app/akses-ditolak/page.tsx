@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldAlert, ArrowLeft, Home, LogIn } from "lucide-react";
+import { ShieldAlert, Home, LogIn } from "lucide-react";
 import { PublicNav } from "@/components/navigation/public-nav";
 import { PublicFooter } from "@/components/navigation/public-footer";
 

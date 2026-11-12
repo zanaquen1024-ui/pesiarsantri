@@ -1,26 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import {
   FileCheck2,
   ShieldCheck,
   QrCode,
-  Clock,
-  UserCheck,
-  CheckCircle2,
   Smartphone,
-  ChevronRight,
-  ArrowRight,
+  UserCheck,
   HelpCircle,
 } from "lucide-react";
 import { PublicNav } from "@/components/navigation/public-nav";
 import { PublicFooter } from "@/components/navigation/public-footer";
-import { usePesiar } from "@/lib/context/pesiar-context";
 
 export default function CaraKerjaPage() {
-  const { settings } = usePesiar();
   const [activeTab, setActiveTab] = useState<"wali" | "pengurus" | "gerbang">("wali");
+
+  const tabOptions: Array<{ id: "wali" | "pengurus" | "gerbang"; label: string }> = [
+    { id: "wali", label: "Untuk Wali Santri" },
+    { id: "pengurus", label: "Untuk Pengurus Asrama" },
+    { id: "gerbang", label: "Untuk Petugas Gerbang" },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -45,14 +44,10 @@ export default function CaraKerjaPage() {
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 py-12 lg:py-16 space-y-12">
         {/* Tab Selection */}
         <div className="flex items-center justify-center gap-2 p-1.5 bg-slate-200/80 rounded-2xl max-w-md mx-auto">
-          {[
-            { id: "wali", label: "Untuk Wali Santri" },
-            { id: "pengurus", label: "Untuk Pengurus Asrama" },
-            { id: "gerbang", label: "Untuk Petugas Gerbang" },
-          ].map((tab) => (
+          {tabOptions.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id)}
               className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all ${
                 activeTab === tab.id
                   ? "bg-white text-pesantren-950 shadow-sm"
@@ -103,8 +98,11 @@ export default function CaraKerjaPage() {
                     key={step.num}
                     className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-pesantren-50 text-pesantren-800 flex items-center justify-center font-bold font-mono">
-                      {step.num}
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-pesantren-50 text-pesantren-800 flex items-center justify-center font-bold font-mono">
+                        {step.num}
+                      </div>
+                      <Icon className="w-5 h-5 text-pesantren-700" />
                     </div>
                     <h3 className="font-bold text-base text-slate-900">{step.title}</h3>
                     <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
@@ -147,18 +145,24 @@ export default function CaraKerjaPage() {
                   desc: "Beri persetujuan atau tolak disertai catatan resmi yang otomatis terlihat oleh wali santri.",
                   icon: ShieldCheck,
                 },
-              ].map((step) => (
-                <div
-                  key={step.num}
-                  className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-pesantren-50 text-pesantren-800 flex items-center justify-center font-bold font-mono">
-                    {step.num}
+              ].map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div
+                    key={step.num}
+                    className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-pesantren-50 text-pesantren-800 flex items-center justify-center font-bold font-mono">
+                        {step.num}
+                      </div>
+                      <Icon className="w-5 h-5 text-pesantren-700" />
+                    </div>
+                    <h3 className="font-bold text-base text-slate-900">{step.title}</h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
                   </div>
-                  <h3 className="font-bold text-base text-slate-900">{step.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -193,20 +197,26 @@ export default function CaraKerjaPage() {
                   num: "3",
                   title: "Check-Out / Check-In",
                   desc: "Klik tombol Check-Out saat keluar atau Check-In saat santri kembali. Keterlambatan terdeteksi otomatis.",
-                  icon: Clock,
+                  icon: ShieldCheck,
                 },
-              ].map((step) => (
-                <div
-                  key={step.num}
-                  className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-pesantren-50 text-pesantren-800 flex items-center justify-center font-bold font-mono">
-                    {step.num}
+              ].map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div
+                    key={step.num}
+                    className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-pesantren-50 text-pesantren-800 flex items-center justify-center font-bold font-mono">
+                        {step.num}
+                      </div>
+                      <Icon className="w-5 h-5 text-pesantren-700" />
+                    </div>
+                    <h3 className="font-bold text-base text-slate-900">{step.title}</h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
                   </div>
-                  <h3 className="font-bold text-base text-slate-900">{step.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -247,4 +257,3 @@ export default function CaraKerjaPage() {
     </div>
   );
 }
-

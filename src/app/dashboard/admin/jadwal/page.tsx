@@ -2,15 +2,10 @@
 
 import React, { useState } from "react";
 import {
-  Calendar,
-  Clock,
   Plus,
   Edit2,
   Trash2,
   X,
-  CheckCircle2,
-  AlertCircle,
-  Users,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
 import { PesiarSchedule } from "@/lib/types";

@@ -2,17 +2,11 @@
 
 import React, { useState } from "react";
 import {
-  Users,
   Search,
   Plus,
-  Filter,
   Edit2,
   Trash2,
   X,
-  CheckCircle2,
-  Building,
-  GraduationCap,
-  HeartPulse,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
 import { Santri, GenderType } from "@/lib/types";

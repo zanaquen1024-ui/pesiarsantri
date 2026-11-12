@@ -2,29 +2,14 @@
 
 import React from "react";
 import {
-  BarChart3,
-  Users,
   ShieldCheck,
-  AlertTriangle,
-  Clock,
-  CheckCircle2,
   Printer,
   Building,
-  TrendingUp,
-  FileText,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
-import { formatTimeWIB, formatDateID, getPermitStatusMeta } from "@/lib/utils";
 
 export default function LeaderDashboardPage() {
-  const { santriList, permitsList, schedulesList, settings, stats } = usePesiar();
-
-  const activeSchedule = schedulesList.find((s) => s.is_active) || schedulesList[0];
-
-  const totalRegistered = santriList.length;
-  const totalApprovedPermits = permitsList.filter(
-    (p) => p.status === "approved" || p.status === "active_out" || p.status === "completed" || p.status === "overdue"
-  ).length;
+  const { permitsList } = usePesiar();
 
   const totalCompleted = permitsList.filter((p) => p.status === "completed").length;
   const totalActiveOut = permitsList.filter((p) => p.status === "active_out").length;

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { HelpCircle, Home, ArrowLeft } from "lucide-react";
@@ -44,4 +42,3 @@ export default function NotFoundPage() {
     </div>
   );
 }
-

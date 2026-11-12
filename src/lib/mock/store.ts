@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import {
   Profile,
   Santri,
@@ -9,7 +8,6 @@ import {
   SystemSettings,
   GateLog,
   AuditLog,
-  UserRole,
 } from "@/lib/types";
 import {
   DEMO_PROFILES,

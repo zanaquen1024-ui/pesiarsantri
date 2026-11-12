@@ -2,27 +2,20 @@
 
 import React, { useState } from "react";
 import {
-  FileCheck2,
-  Users,
   Clock,
   CheckCircle2,
   XCircle,
   AlertTriangle,
   ExternalLink,
   Phone,
-  Building,
-  Search,
-  Filter,
-  MessageSquare,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
-import { formatDateTimeWIB, formatTimeWIB, getActivityTypeMeta } from "@/lib/utils";
+import { formatTimeWIB, getActivityTypeMeta } from "@/lib/utils";
 
 export default function PengurusDashboardPage() {
   const { permitsList, santriList, approvePermit, rejectPermit, stats } = usePesiar();
 
   const [activeTab, setActiveTab] = useState<"pending" | "active_out" | "overdue">("pending");
-  const [searchTerm, setSearchTerm] = useState("");
 
   const pendingPermits = permitsList.filter((p) => p.status === "pending");
   const activeOutPermits = permitsList.filter((p) => p.status === "active_out");

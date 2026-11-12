@@ -7,14 +7,9 @@ import {
   Calendar,
   FileCheck2,
   QrCode,
-  FileText,
   Clock,
-  CheckCircle2,
   AlertTriangle,
-  ArrowRight,
   PlusCircle,
-  Building,
-  UserCheck,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
 import { formatDateID, formatTimeWIB, getPermitStatusMeta } from "@/lib/utils";

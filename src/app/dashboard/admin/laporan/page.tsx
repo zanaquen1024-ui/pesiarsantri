@@ -2,19 +2,11 @@
 
 import React, { useState } from "react";
 import {
-  FileText,
   Printer,
   Download,
-  Filter,
-  CheckCircle2,
-  AlertTriangle,
-  Clock,
-  Calendar,
-  Building,
-  ShieldCheck,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
-import { formatDateID, formatTimeWIB, formatDateTimeWIB, getPermitStatusMeta } from "@/lib/utils";
+import { formatDateID, formatTimeWIB, getPermitStatusMeta } from "@/lib/utils";
 
 export default function LaporanPesiarPage() {
   const { permitsList, santriList, schedulesList, settings } = usePesiar();

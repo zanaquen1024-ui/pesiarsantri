@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ShieldCheck, Mail, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Mail, CheckCircle2 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
 
 export default function LupaPasswordPage() {

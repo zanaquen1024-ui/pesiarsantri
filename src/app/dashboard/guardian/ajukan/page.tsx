@@ -1,26 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
-  FileCheck2,
   Calendar,
-  Clock,
   Users,
   Car,
-  ShieldCheck,
   CheckCircle2,
-  AlertCircle,
   ArrowLeft,
-  Sparkles,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
 import { ActivityType } from "@/lib/types";
-import { formatDateID, formatTimeWIB } from "@/lib/utils";
+import { formatDateID } from "@/lib/utils";
 
 export default function AjukanIzinGuardianPage() {
-  const router = useRouter();
   const { santriList, schedulesList, addPermit, currentUser } = usePesiar();
 
   const activeSchedules = schedulesList.filter((s) => s.is_active);

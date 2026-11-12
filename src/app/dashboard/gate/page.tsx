@@ -6,26 +6,21 @@ import {
   Search,
   CheckCircle2,
   AlertTriangle,
-  Clock,
-  UserCheck,
   Phone,
-  Car,
-  Building,
   Volume2,
   VolumeX,
   Camera,
   History,
-  X,
   ArrowRight,
   ShieldAlert,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
-import { PesiarPermit, Santri } from "@/lib/types";
-import { formatTimeWIB, formatDateTimeWIB, getPermitStatusMeta, getActivityTypeMeta } from "@/lib/utils";
+import { PesiarPermit } from "@/lib/types";
+import { formatTimeWIB, getPermitStatusMeta } from "@/lib/utils";
 import { playSuccessChime, playWarningBuzzer } from "@/components/gate/audio-beep";
 
 export default function GateTerminalPage() {
-  const { permitsList, santriList, gateCheckOut, gateCheckIn, gateLogs, currentUser } = usePesiar();
+  const { permitsList, santriList, gateCheckOut, gateCheckIn, gateLogs } = usePesiar();
 
   const [inputCode, setInputCode] = useState("");
   const [activePermit, setActivePermit] = useState<PesiarPermit | null>(null);
@@ -116,11 +111,11 @@ export default function GateTerminalPage() {
           handleFindPermit(decodedText);
           stopCameraScanner();
         },
-        (error) => {
-          // scanning frame error (ignore)
+        () => {
+          // scanning frame (ignore)
         }
       );
-    } catch (err: any) {
+    } catch {
       setScannerError("Gagal membuka kamera: pastikan izin kamera aktif pada peramban Anda.");
       setIsScanning(false);
     }

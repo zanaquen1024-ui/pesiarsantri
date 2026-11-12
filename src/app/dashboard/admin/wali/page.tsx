@@ -2,17 +2,11 @@
 
 import React, { useState } from "react";
 import {
-  UserCheck,
   Search,
   CheckCircle2,
-  XCircle,
   Phone,
-  Home,
-  ShieldAlert,
-  AlertCircle,
   Clock,
 } from "lucide-react";
-import { usePesiar } from "@/lib/context/pesiar-context";
 
 interface GuardianRelationItem {
   id: string;
@@ -28,8 +22,6 @@ interface GuardianRelationItem {
 }
 
 export default function WaliVerifikasiPage() {
-  const { santriList } = usePesiar();
-
   // Dynamic state of guardian verification
   const [relations, setRelations] = useState<GuardianRelationItem[]>([
     {

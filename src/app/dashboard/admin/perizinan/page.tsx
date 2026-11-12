@@ -2,27 +2,17 @@
 
 import React, { useState } from "react";
 import {
-  FileCheck2,
   Search,
   Plus,
-  Filter,
   CheckCircle2,
   XCircle,
-  Clock,
-  ExternalLink,
   QrCode,
-  UserCheck,
-  AlertTriangle,
   X,
-  Phone,
-  Eye,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
-import { ActivityType, PermitStatus } from "@/lib/types";
+import { ActivityType, PesiarPermit } from "@/lib/types";
 import {
-  formatDateID,
   formatTimeWIB,
-  formatDateTimeWIB,
   getPermitStatusMeta,
   getActivityTypeMeta,
 } from "@/lib/utils";
@@ -44,7 +34,7 @@ export default function AdminPerizinanPage() {
   const [selectedActivity, setSelectedActivity] = useState<string>("all");
 
   // Modal State for Digital Pass QR
-  const [selectedPermitForQr, setSelectedPermitForQr] = useState<any | null>(null);
+  const [selectedPermitForQr, setSelectedPermitForQr] = useState<PesiarPermit | null>(null);
 
   // Modal State for Create Manual Permit on behalf of Guardian
   const [isManualModalOpen, setIsManualModalOpen] = useState(false);

@@ -8,9 +8,7 @@ import {
   LogIn,
   KeyRound,
   Mail,
-  UserCheck,
   Sparkles,
-  ArrowRight,
   AlertCircle,
   Eye,
   EyeOff,
@@ -22,7 +20,7 @@ import { getRoleMeta } from "@/lib/utils";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { switchUser, currentUser, settings } = usePesiar();
+  const { switchUser, settings } = usePesiar();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

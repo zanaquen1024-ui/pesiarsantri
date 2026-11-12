@@ -10,6 +10,7 @@ import {
   GateLog,
   AuditLog,
   UserRole,
+  PermitStatus,
 } from "@/lib/types";
 import {
   DEMO_PROFILES,
@@ -88,7 +89,6 @@ export function PesiarProvider({ children }: { children: React.ReactNode }) {
   const [settings, setSettingsState] = useState<SystemSettings>(INITIAL_SETTINGS);
   const [gateLogs, setGateLogsState] = useState<GateLog[]>(INITIAL_GATE_LOGS);
   const [auditLogs, setAuditLogsState] = useState<AuditLog[]>(INITIAL_AUDIT_LOGS);
-  const [mounted, setMounted] = useState(false);
 
   const loadFromStorage = () => {
     setCurrentUserState(getStoredCurrentUser());
@@ -102,7 +102,6 @@ export function PesiarProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     loadFromStorage();
-    setMounted(true);
 
     const handleDataChange = () => {
       loadFromStorage();
@@ -328,7 +327,7 @@ export function PesiarProvider({ children }: { children: React.ReactNode }) {
       if (p.id === permit.id) {
         return {
           ...p,
-          status: (isLateCalculated ? "overdue" : "completed") as any,
+          status: (isLateCalculated ? "overdue" : "completed") as PermitStatus,
           check_in_time: now.toISOString(),
           check_in_by: currentUser.full_name,
           is_late: isLateCalculated,

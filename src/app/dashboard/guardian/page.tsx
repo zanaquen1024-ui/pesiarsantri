@@ -4,30 +4,25 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   Users,
-  Calendar,
   FileCheck2,
   QrCode,
   Clock,
   PlusCircle,
-  CheckCircle2,
-  AlertTriangle,
-  ChevronRight,
-  Printer,
   ShieldCheck,
-  Building,
 } from "lucide-react";
 import { usePesiar } from "@/lib/context/pesiar-context";
-import { formatTimeWIB, formatDateID, getPermitStatusMeta, getActivityTypeMeta } from "@/lib/utils";
+import { PesiarPermit } from "@/lib/types";
+import { getPermitStatusMeta, getActivityTypeMeta } from "@/lib/utils";
 import { QrPassModal } from "@/components/permits/qr-pass-modal";
 
 export default function GuardianDashboardPage() {
-  const { santriList, permitsList, schedulesList, currentUser } = usePesiar();
+  const { santriList, permitsList, currentUser } = usePesiar();
 
   // For demo, linked santri are the first 2 santri (or all)
   const mySantri = santriList.slice(0, 2);
   const myPermits = permitsList; // Permits for my santri
 
-  const [selectedPermitForQr, setSelectedPermitForQr] = useState<any | null>(null);
+  const [selectedPermitForQr, setSelectedPermitForQr] = useState<PesiarPermit | null>(null);
 
   // Active permit (approved or active_out)
   const activePermit = myPermits.find(
