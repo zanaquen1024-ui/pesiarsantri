@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#064E3B"/>
+  <circle cx="256" cy="256" r="220" stroke="#F59E0B" stroke-width="8" stroke-dasharray="16 12" opacity="0.4"/>
+  <!-- Dome / Arch -->
+  <path d="M256 96 C190 96 140 160 140 240 L140 400 L372 400 L372 240 C372 160 322 96 256 96 Z" fill="#047857" opacity="0.5"/>
+  <path d="M256 128 C204 128 168 180 168 250 L168 400 L344 400 L344 250 C344 180 308 128 256 128 Z" fill="#065F46"/>
+  <!-- Inner Arch / Gate Door -->
+  <path d="M256 180 C220 180 196 215 196 260 L196 400 L316 400 L316 260 C316 215 292 180 256 180 Z" fill="#022C22"/>
+  <!-- Crescent & Star on Top -->
+  <path d="M256 60 A18 18 0 0 0 256 96 A14 14 0 0 1 256 68 A18 18 0 0 0 256 60 Z" fill="#F59E0B"/>
+  <!-- Pass / Checkmark / Badge -->
+  <circle cx="256" cy="300" r="48" fill="#F59E0B"/>
+  <path d="M236 300 L250 314 L278 286" stroke="#064E3B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+

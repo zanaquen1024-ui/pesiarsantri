@@ -1,0 +1,17 @@
+{
+  "name": "Pesiar Santri - Sistem Perizinan & Kunjungan",
+  "short_name": "PesiarSantri",
+  "description": "Sistem Informasi Digital Kegiatan Refreshing & Kunjungan Santri Pesantren",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#064e3b",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
